@@ -4,7 +4,7 @@ const modal = document.getElementById('modal-lead');
 // 1. CARGAR PROPIEDADES (CON OPCIÓN DE FILTRO)
 async function obtenerPropiedades(filtros = {}) {
     try {
-        const respuesta = await fetch('http://127.0.0.1:5000/api/propiedades');
+        const respuesta = await fetch('https://valle-verde-plataforma.onrender.com/api/propiedades');
         let propiedades = await respuesta.json();
 
         // Aplicar filtros en el cliente (Frontend)
@@ -66,7 +66,7 @@ document.getElementById('form-lead').addEventListener('submit', async (e) => {
     };
 
     try {
-        const res = await fetch('http://127.0.0.1:5000/api/leads', {
+        const res = await fetch('https://valle-verde-plataforma.onrender.com/api/leads', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(nuevoLead)
