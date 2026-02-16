@@ -1,0 +1,176 @@
+/* PALETA OFICIAL INMOBILIARIA VALLE VERDE */
+:root {
+    --color-primario: #2e7d32;   /* Verde Bosque (Logo) */
+    --color-secundario: #4caf50; /* Verde Vibrante */
+    --color-acento: #e67e22;     /* Naranja para botones de acción */
+    --color-fondo: #f4f7f6;
+    --negro-suave: #2c3e50;
+    --blanco: #ffffff;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--color-fondo);
+    margin: 0;
+    color: var(--negro-suave);
+}
+
+/* ENCABEZADO */
+header {
+    background-color: var(--negro-suave);
+    color: var(--blanco);
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h2 { color: var(--color-secundario); margin: 0; }
+
+nav a {
+    color: var(--blanco);
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+/* HERO & FILTROS */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1200&q=80');
+    background-size: cover;
+    background-position: center;
+    padding: 60px 20px;
+    text-align: center;
+    color: white;
+}
+
+.filter-bar {
+    background: white;
+    padding: 15px;
+    border-radius: 50px;
+    display: inline-flex;
+    gap: 10px;
+    margin-top: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.filter-bar select, .filter-bar button {
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+.filter-bar button {
+    background-color: var(--color-primario);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* GRID DE PROPIEDADES */
+.propiedades-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    padding: 40px 5%;
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.card:hover { transform: translateY(-5px); }
+
+.card img { width: 100%; height: 200px; object-fit: cover; }
+
+.card-content { padding: 20px; }
+
+.precio {
+    color: var(--color-primario);
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.badge {
+    background: var(--color-secundario);
+    color: white;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+/* BOTÓN "ME INTERESA" (Corregido) */
+.card-content button {
+    background-color: var(--color-acento);
+    color: white;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.3s;
+}
+
+.card-content button:hover {
+    background-color: #d35400; /* Naranja más oscuro al pasar el mouse */
+}
+
+/* MODAL (FORMULARIO DE LEADS) */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1000; 
+    left: 0; top: 0; width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.7);
+}
+
+.modal-content {
+    background-color: var(--blanco);
+    margin: 5% auto;
+    padding: 30px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 450px;
+    position: relative;
+    box-shadow: 0 5px 30px rgba(0,0,0,0.5);
+}
+
+.close {
+    position: absolute; right: 20px; top: 15px;
+    font-size: 28px; cursor: pointer; color: #999;
+}
+
+#form-lead input, #form-lead textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+#form-lead button {
+    background-color: var(--color-primario);
+    color: white;
+    border: none;
+    padding: 15px;
+    width: 100%;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
